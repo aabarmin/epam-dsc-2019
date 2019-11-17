@@ -1,0 +1,4 @@
+# Enable Hystrix support for Feign
+feign:
+  hystrix:
+    enabled: true

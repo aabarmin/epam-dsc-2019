@@ -1,0 +1,53 @@
+version: "3"
+
+services:
+  eureka:
+    image: epam-training/eureka-server
+    ports:
+      - "8081:8080"
+    networks:
+      - common
+
+  cloud-config-server:
+    image: epam-training/cloud-config-server
+    networks:
+      - common
+
+  greeting-app-default:
+    image: epam-training/eureka-client
+    ports:
+      - "8002"
+    networks:
+      - common
+    environment:
+      - SPRING_PROFILES=docker
+
+  greeting-app-secondary:
+    image: epam-training/eureka-client
+    ports:
+      - "8003"
+    networks:
+      - common
+    environment:
+      - SPRING_PROFILES=docker,secondary
+
+  web-proxy:
+    image: epam-training/eureka-zuul
+    ports:
+      - "80:8080"
+    networks:
+      - common
+
+  portainer:
+    image: portainer/portainer
+    ports:
+      - 9000:9000
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data/data
+
+networks:
+  common:
+
+volumes:
+  portainer_data:

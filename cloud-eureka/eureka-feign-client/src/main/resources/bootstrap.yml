@@ -1,0 +1,20 @@
+# Application-wide configuration
+spring:
+  application:
+    name: cloud-eureka-feign-client
+
+  # Obtain config from config service
+  cloud:
+    config:
+      fail-fast: true
+      discovery:
+        enabled: true
+        service-id: cloud-config-server
+
+# Connect to Eureka
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8000/eureka/
+    # This application will not registered in Eureka
+    register-with-eureka: false

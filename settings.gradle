@@ -1,0 +1,22 @@
+rootProject.name = 'spring-microservices-training'
+
+include 'basic-microservice'
+
+// Cloud Config Example
+include 'cloud-config'
+include 'cloud-config:cloud-config-server'
+include 'cloud-config:cloud-config-client'
+
+// Eureka Example
+include 'cloud-eureka'
+include 'cloud-eureka:eureka-server'
+include 'cloud-eureka:cloud-config-server'
+include 'cloud-eureka:eureka-client'
+include 'cloud-eureka:eureka-client-declarative'
+include 'cloud-eureka:eureka-feign-client'
+include 'cloud-eureka:eureka-zuul'
+
+// Cloud security
+include 'cloud-security'
+include 'cloud-security:security-resource-server'
+include 'cloud-security:security-client-application'

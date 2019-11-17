@@ -1,0 +1,14 @@
+server:
+  port: 8080
+
+security:
+  basic:
+    enabled: false
+  oauth2:
+    client:
+      client-id: some-client-details
+      client-secret: some-client-secret
+      access-token-uri: http://localhost:8000/auth/oauth/token
+      user-authorization-uri: http://localhost:8000/auth/oauth/authorize
+    resource:
+      user-info-uri: http://localhost:8000/auth/user/me

@@ -1,0 +1,26 @@
+# Application-wide configuration
+server:
+  port: 0
+
+spring:
+  # Name of application, it's used in an Eureka to register app
+  # and Cloud Config to get a proper config.
+  application:
+    name: cloud-eureka-client
+
+  # Try to get reference to Config Server using service discovery.
+  # To make it works, it's necessary to enable it first, and next
+  # it's necessary to set the name of config server.
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: cloud-config-server
+      # Stop the application if can't connect to config service
+      fail-fast: true
+
+# Set the location of Eureka's Server
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka:8080/eureka/

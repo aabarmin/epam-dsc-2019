@@ -1,0 +1,9 @@
+server:
+  port: 8080
+
+zuul:
+  routes:
+    greeting:
+      serviceId: cloud-eureka-client
+      path: /greeting/*
+      stripPrefix: false

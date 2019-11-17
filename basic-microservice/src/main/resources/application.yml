@@ -1,0 +1,6 @@
+basic:
+  service:
+    name: "Basic Service Implementation"
+
+server:
+  port: 8001

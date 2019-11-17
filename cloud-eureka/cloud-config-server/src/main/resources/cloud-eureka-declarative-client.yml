@@ -1,0 +1,4 @@
+app:
+  external:
+    service:
+      name: cloud-eureka-client
