@@ -1,4 +1,4 @@
-package com.epam.training.basic;
+package com.epam.bsc2019.basic;
 
 import static org.junit.Assert.assertTrue;
 
