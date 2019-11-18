@@ -25,20 +25,20 @@
 ### Базовый микросервис
 
 | Пример | Gradle-Модуль |
-|----|:-----|
+|:----|:-----|
 | Базовый сервис | `basic-microservice` |
 
 ### Централизованное хранение конфигураций сервисов
 
 | Пример | Gradle-Модуль |
-|----|:-----|
+|:----|:-----|
 | Сервер конфигураций | `cloud-config:cloud-config-server` |
 | Клиент к серверу конфигураций | `cloud-config:cloud-config-client` |
 
 ### Service Discovery с использованием Eureka
 
 | Пример | Gradle-Модуль |
-|----|:-----|
+|:----|:-----|
 | Сервер Eureka | `cloud-eureka:eureka-server` |
 | Сервер конфигураций | `cloud-eureka:cloud-config-server` |
 | Клиентские приложения, которые получают конфиг через Eureka | `cloud-eureka:eureka-client` |
@@ -46,7 +46,7 @@
 ### Получение сервисов через Eureka Client
 
 | Пример | Gradle-Модуль |
-|----|:-----|
+|:----|:-----|
 | Клиент с ручной обработкой ошибок | `cloud-eureka:eureka-client-declarative:discovery-client` |
 | Клиент и балансировка нагрузки с помощью Ribbon | `cloud-eureka:eureka-client-declarative:ribbon-client` |
 | Клиент с fallback на Hystrix | `cloud-eureka:eureka-client-declarative:hystrix-client` |
@@ -54,19 +54,19 @@
 ### Feign-клиент с Eureka
 
 | Пример | Gradle-Модуль |
-|----|:-----|
+|:----|:-----|
 | Декларативный клиент без fallback | `cloud-eureka:eureka-feign-client:discovery-client` |
 | Декларативный клиент с fallback на Hystrix | `cloud-eureka:eureka-feign-client:hystrix-client` |
 
 ### Реверс-прокси на Zuul
 
 | Пример | Gradle-Модуль |
-|----|:-----|
+|:----|:-----|
 | Zuul | `cloud-eureka:eureka-zuul` |
 
 ### OAuth2 с использованием Spring Cloud Security
 
 | Пример | Gradle-Модуль |
-|----|:-----|
+|:----|:-----|
 | Сервер ресурсов | `cloud-security:security-resource-server` |
 | Пример приложения | `cloud-security:security-client-application` |
