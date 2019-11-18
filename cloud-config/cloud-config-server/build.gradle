@@ -6,7 +6,6 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath("com.bmuschko:gradle-docker-plugin:4.3.0")
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
     }
 }
@@ -15,7 +14,6 @@ apply plugin: 'java'
 apply plugin: 'idea'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
-apply plugin: 'com.bmuschko.docker-remote-api'
 
 group 'com.epam.dsc2019'
 
@@ -42,32 +40,4 @@ dependencyManagement {
     imports {
         mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
     }
-}
-
-
-/**
- * Docker tasks start here.
- */
-import com.bmuschko.gradle.docker.tasks.image.*
-
-task copyArtifact(type: Copy) {
-    dependsOn build
-
-    from "${buildDir}/libs/${project.name}.jar"
-    into "${buildDir}/docker"
-}
-
-task createDockerfile(type: Dockerfile) {
-    dependsOn copyArtifact
-
-    from 'java:8-jre-alpine'
-    exposePort 8080
-    addFile("${project.name}.jar", "/opt/app.jar")
-    defaultCommand('java', '-jar', '-Dspring.profiles.active=docker,native', '/opt/app.jar')
-}
-
-task createImage(type: DockerBuildImage) {
-    dependsOn createDockerfile
-
-    tags.add("epam-training/${project.name}:latest")
 }

@@ -1,4 +1,4 @@
-package com.epam.bsc2019.cloud.config.client;
+package com.epam.dsc2019.cloud.config.client;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;

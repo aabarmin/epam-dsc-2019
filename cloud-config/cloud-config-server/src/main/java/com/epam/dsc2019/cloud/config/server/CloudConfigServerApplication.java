@@ -1,4 +1,4 @@
-package com.epam.bsc2019.cloud.config.server;
+package com.epam.dsc2019.cloud.config.server;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
