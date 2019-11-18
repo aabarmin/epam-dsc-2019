@@ -6,7 +6,6 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath("com.bmuschko:gradle-docker-plugin:4.3.0")
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
     }
 }
@@ -15,9 +14,8 @@ apply plugin: 'java'
 apply plugin: 'idea'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
-apply plugin: 'com.bmuschko.docker-remote-api'
 
-group 'com.epam.training'
+group 'com.epam.dsc2019'
 
 ext['springCloudVersion'] = 'Greenwich.M3'
 
@@ -44,46 +42,4 @@ dependencyManagement {
     imports {
         mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
     }
-}
-
-/**
- * Docker tasks start here.
- */
-import com.bmuschko.gradle.docker.tasks.image.*
-
-task copyArtifact(type: Copy) {
-    dependsOn build
-
-    from "${buildDir}/libs/${project.name}.jar"
-    into "${buildDir}/docker"
-}
-
-task createDockerfile(type: Dockerfile) {
-    dependsOn copyArtifact
-
-    from 'java:8-jre-alpine'
-    exposePort 8080
-    addFile("${project.name}.jar", "/opt/app.jar")
-
-    // adding Dockerize in order to start client container right after the start of server's one
-    runCommand 'apk add --no-cache openssl'
-    environmentVariable('DOCKERIZE_VERSION', 'v0.6.1')
-    runCommand(
-            'wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-alpine-linux-amd64-$DOCKERIZE_VERSION.tar.gz ' +
-                    '&& tar -C /usr/local/bin -xzvf dockerize-alpine-linux-amd64-$DOCKERIZE_VERSION.tar.gz ' +
-                    '&& rm dockerize-alpine-linux-amd64-$DOCKERIZE_VERSION.tar.gz'
-    )
-
-    defaultCommand(
-            'dockerize',
-            '-wait', 'tcp://cloud-config-server:8080',
-            '-timeout', '300s',
-            'java', '-jar', '-Dspring.profiles.active=docker', '/opt/app.jar'
-    )
-}
-
-task createImage(type: DockerBuildImage) {
-    dependsOn createDockerfile
-
-    tags.add("epam-training/${project.name}:latest")
 }

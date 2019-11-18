@@ -15,7 +15,7 @@ apply plugin: 'idea'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
-group 'com.epam.training'
+group 'com.epam.dsc2019'
 
 ext['springCloudVersion'] = 'Greenwich.M3'
 
