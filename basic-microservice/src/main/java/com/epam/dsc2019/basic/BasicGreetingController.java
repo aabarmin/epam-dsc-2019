@@ -1,4 +1,4 @@
-package com.epam.bsc2019.basic;
+package com.epam.dsc2019.basic;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
