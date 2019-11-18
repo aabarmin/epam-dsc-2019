@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleHome" value="C:/ProgramData/chocolatey/lib/gradle/tools/gradle-4.4.1" />
+        <option name="gradleJvm" value="9" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/basic-microservice" />
+            <option value="$PROJECT_DIR$/cloud-config" />
+            <option value="$PROJECT_DIR$/cloud-config/cloud-config-client" />
+            <option value="$PROJECT_DIR$/cloud-config/cloud-config-server" />
+            <option value="$PROJECT_DIR$/cloud-eureka" />
+            <option value="$PROJECT_DIR$/cloud-eureka/cloud-config-server" />
+            <option value="$PROJECT_DIR$/cloud-eureka/eureka-client" />
+            <option value="$PROJECT_DIR$/cloud-eureka/eureka-client-declarative" />
+            <option value="$PROJECT_DIR$/cloud-eureka/eureka-client-declarative/discovery-client" />
+            <option value="$PROJECT_DIR$/cloud-eureka/eureka-client-declarative/hystrix-client" />
+            <option value="$PROJECT_DIR$/cloud-eureka/eureka-client-declarative/ribbon-client" />
+            <option value="$PROJECT_DIR$/cloud-eureka/eureka-feign-client" />
+            <option value="$PROJECT_DIR$/cloud-eureka/eureka-feign-client/discovery-client" />
+            <option value="$PROJECT_DIR$/cloud-eureka/eureka-feign-client/hystrix-client" />
+            <option value="$PROJECT_DIR$/cloud-eureka/eureka-server" />
+            <option value="$PROJECT_DIR$/cloud-eureka/eureka-zuul" />
+            <option value="$PROJECT_DIR$/cloud-security" />
+            <option value="$PROJECT_DIR$/cloud-security/security-client-application" />
+            <option value="$PROJECT_DIR$/cloud-security/security-resource-server" />
+          </set>
+        </option>
+        <option name="useQualifiedModuleNames" value="true" />
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

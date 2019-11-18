@@ -1,0 +1,8 @@
+app:
+  external:
+    service:
+      name: cloud-eureka-client
+    errors:
+      count: 30
+    fallback:
+      icon: 128025

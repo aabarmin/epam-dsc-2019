@@ -1,0 +1,16 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="(5) Ribbon load balancer" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <module name="epam-dsc-2019.cloud-eureka.eureka-client-declarative.ribbon-client.main" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="com.epam.dsc2019.cloud.ribbon.client.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <option name="SPRING_BOOT_MAIN_CLASS" value="com.epam.dsc2019.cloud.ribbon.client.CloudEurekaDeclarativeClientWithRibbonApplication" />
+    <option name="ALTERNATIVE_JRE_PATH" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

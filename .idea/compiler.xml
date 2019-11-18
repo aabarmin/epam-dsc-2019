@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="demo.main" target="1.8" />
+      <module name="demo.test" target="1.8" />
+      <module name="epam-dsc-2019.cloud-eureka.eureka-feign-client.declarative-client.main" target="1.8" />
+      <module name="epam-dsc-2019.cloud-eureka.eureka-feign-client.declarative-client.test" target="1.8" />
+      <module name="spring-microservices-training.basic-microservice.main" target="1.8" />
+      <module name="spring-microservices-training.basic-microservice.test" target="1.8" />
+      <module name="spring-microservices-training.cloud-config.cloud-config-client.main" target="1.8" />
+      <module name="spring-microservices-training.cloud-config.cloud-config-client.test" target="1.8" />
+      <module name="spring-microservices-training.cloud-config.cloud-config-server.main" target="1.8" />
+      <module name="spring-microservices-training.cloud-config.cloud-config-server.test" target="1.8" />
+      <module name="spring-microservices-training.cloud-config.main" target="1.8" />
+      <module name="spring-microservices-training.cloud-config.test" target="1.8" />
+      <module name="spring-microservices-training.cloud-eureka.cloud-config-server.main" target="1.8" />
+      <module name="spring-microservices-training.cloud-eureka.cloud-config-server.test" target="1.8" />
+      <module name="spring-microservices-training.cloud-eureka.eureka-client-declarative.discovery-client.main" target="1.8" />
+      <module name="spring-microservices-training.cloud-eureka.eureka-client-declarative.discovery-client.test" target="1.8" />
+      <module name="spring-microservices-training.cloud-eureka.eureka-client-declarative.hystrix-client.main" target="1.8" />
+      <module name="spring-microservices-training.cloud-eureka.eureka-client-declarative.hystrix-client.test" target="1.8" />
+      <module name="spring-microservices-training.cloud-eureka.eureka-client-declarative.main" target="1.8" />
+      <module name="spring-microservices-training.cloud-eureka.eureka-client-declarative.ribbon-client.main" target="1.8" />
+      <module name="spring-microservices-training.cloud-eureka.eureka-client-declarative.ribbon-client.test" target="1.8" />
+      <module name="spring-microservices-training.cloud-eureka.eureka-client-declarative.test" target="1.8" />
+      <module name="spring-microservices-training.cloud-eureka.eureka-client.main" target="1.8" />
+      <module name="spring-microservices-training.cloud-eureka.eureka-client.test" target="1.8" />
+      <module name="spring-microservices-training.cloud-eureka.eureka-feign-client.main" target="1.8" />
+      <module name="spring-microservices-training.cloud-eureka.eureka-feign-client.test" target="1.8" />
+      <module name="spring-microservices-training.cloud-eureka.eureka-server.main" target="1.8" />
+      <module name="spring-microservices-training.cloud-eureka.eureka-server.test" target="1.8" />
+      <module name="spring-microservices-training.cloud-eureka.eureka-zuul.main" target="1.8" />
+      <module name="spring-microservices-training.cloud-eureka.eureka-zuul.test" target="1.8" />
+      <module name="spring-microservices-training.cloud-eureka.main" target="1.8" />
+      <module name="spring-microservices-training.cloud-eureka.test" target="1.8" />
+      <module name="spring-microservices-training.cloud-security.main" target="1.8" />
+      <module name="spring-microservices-training.cloud-security.security-client-application.main" target="1.8" />
+      <module name="spring-microservices-training.cloud-security.security-client-application.test" target="1.8" />
+      <module name="spring-microservices-training.cloud-security.security-resource-server.main" target="1.8" />
+      <module name="spring-microservices-training.cloud-security.security-resource-server.test" target="1.8" />
+      <module name="spring-microservices-training.cloud-security.test" target="1.8" />
+      <module name="spring-microservices-training.main" target="1.8" />
+      <module name="spring-microservices-training.test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

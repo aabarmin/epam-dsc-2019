@@ -1,0 +1,10 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="(8) Zuul Router" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <module name="epam-dsc-2019.cloud-eureka.eureka-zuul.main" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="com.epam.dsc2019.cloud.zuul.router.CloudZuulRouterApplication" />
+    <option name="ALTERNATIVE_JRE_PATH" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

@@ -1,0 +1,9 @@
+# Enable Hystrix support for Feign
+feign:
+  hystrix:
+    enabled: true
+
+app:
+  external:
+    fallback:
+      icon: 128025

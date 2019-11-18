@@ -1,0 +1,10 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="(3) Eureka Provide app Default" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <module name="epam-dsc-2019.cloud-eureka.eureka-client.main" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="com.epam.dsc2019.cloud.discovery.client.CloudEurekaClientApplication" />
+    <option name="ALTERNATIVE_JRE_PATH" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

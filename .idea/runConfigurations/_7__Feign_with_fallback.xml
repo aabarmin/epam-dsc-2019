@@ -1,0 +1,16 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="(7) Feign with fallback" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <module name="epam-dsc-2019.cloud-eureka.eureka-feign-client.hystrix-client.main" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="com.epam.dsc2019.cloud.hystrix.client.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <option name="SPRING_BOOT_MAIN_CLASS" value="com.epam.dsc2019.cloud.hystrix.client.CloudEurekaFeignClientWithHystrixApplication" />
+    <option name="ALTERNATIVE_JRE_PATH" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

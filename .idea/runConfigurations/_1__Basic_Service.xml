@@ -1,0 +1,10 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="(1) Basic Service" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <module name="epam-dsc-2019.basic-microservice.main" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="com.epam.dsc2019.basic.BasicApplication" />
+    <option name="ALTERNATIVE_JRE_PATH" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

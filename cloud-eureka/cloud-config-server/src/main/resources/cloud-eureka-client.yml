@@ -1,0 +1,9 @@
+# Change the application's port
+server:
+  port: 8002
+
+# Inject some property into the controller
+app:
+  service:
+    name: Eureka Client Example (Default profile)
+    icon: 128049

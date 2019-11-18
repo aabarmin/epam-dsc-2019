@@ -1,0 +1,16 @@
+# Application-wide configuration
+server:
+  port: 8888
+
+# Cloud Config Server configuration.
+# For development and testing purposes I'd like to store configurations at local environment
+spring:
+  # Make native profile active. It allows to store configurations in a classpath
+  profiles:
+    active: native
+  cloud:
+    config:
+      server:
+        native:
+          search-locations:
+            - classpath:/

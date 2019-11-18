@@ -1,0 +1,9 @@
+apply plugin: 'java'
+
+dependencies {
+    implementation('org.springframework.cloud:spring-cloud-config-client')
+}
+
+bootJar {
+    enabled = true
+}
