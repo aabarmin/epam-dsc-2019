@@ -1,0 +1,16 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="(4) Eureka Feign" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <module name="epam-dsc-2019.cloud-eureka.eureka-feign-client.discovery-client.main" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="com.epam.dsc2019.cloud.discovery.client.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <option name="SPRING_BOOT_MAIN_CLASS" value="com.epam.dsc2019.cloud.discovery.client.CloudEurekaFeignClientApplication" />
+    <option name="ALTERNATIVE_JRE_PATH" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

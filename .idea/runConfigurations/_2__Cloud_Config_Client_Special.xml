@@ -1,0 +1,17 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="(2) Cloud Config Client Special" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <module name="epam-dsc-2019.cloud-config.cloud-config-client.main" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="com.epam.bsc2019.cloud.config.client.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <option name="SPRING_BOOT_MAIN_CLASS" value="com.epam.dsc2019.cloud.config.client.CloudConfigClientApplication" />
+    <option name="ACTIVE_PROFILES" value="special" />
+    <option name="ALTERNATIVE_JRE_PATH" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

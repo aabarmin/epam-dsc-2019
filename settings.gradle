@@ -1,4 +1,4 @@
-rootProject.name = 'spring-microservices-training'
+rootProject.name = 'epam-dsc-2019'
 
 include 'basic-microservice'
 
@@ -12,8 +12,11 @@ include 'cloud-eureka'
 include 'cloud-eureka:eureka-server'
 include 'cloud-eureka:cloud-config-server'
 include 'cloud-eureka:eureka-client'
-include 'cloud-eureka:eureka-client-declarative'
-include 'cloud-eureka:eureka-feign-client'
+include 'cloud-eureka:eureka-client-declarative:discovery-client'
+include 'cloud-eureka:eureka-client-declarative:hystrix-client'
+include 'cloud-eureka:eureka-client-declarative:ribbon-client'
+include 'cloud-eureka:eureka-feign-client:discovery-client'
+include 'cloud-eureka:eureka-feign-client:hystrix-client'
 include 'cloud-eureka:eureka-zuul'
 
 // Cloud security

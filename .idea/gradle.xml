@@ -19,7 +19,12 @@
             <option value="$PROJECT_DIR$/cloud-eureka/cloud-config-server" />
             <option value="$PROJECT_DIR$/cloud-eureka/eureka-client" />
             <option value="$PROJECT_DIR$/cloud-eureka/eureka-client-declarative" />
+            <option value="$PROJECT_DIR$/cloud-eureka/eureka-client-declarative/discovery-client" />
+            <option value="$PROJECT_DIR$/cloud-eureka/eureka-client-declarative/hystrix-client" />
+            <option value="$PROJECT_DIR$/cloud-eureka/eureka-client-declarative/ribbon-client" />
             <option value="$PROJECT_DIR$/cloud-eureka/eureka-feign-client" />
+            <option value="$PROJECT_DIR$/cloud-eureka/eureka-feign-client/discovery-client" />
+            <option value="$PROJECT_DIR$/cloud-eureka/eureka-feign-client/hystrix-client" />
             <option value="$PROJECT_DIR$/cloud-eureka/eureka-server" />
             <option value="$PROJECT_DIR$/cloud-eureka/eureka-zuul" />
             <option value="$PROJECT_DIR$/cloud-security" />
