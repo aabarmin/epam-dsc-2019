@@ -12,13 +12,28 @@ public class BasicGreetingController {
     @Value("${app.service.name}")
     private String serviceName;
 
+    @Value("${app.service.icon}")
+    private int iconCode;
+
     @GetMapping
     public String getGreeting() {
-        return "Hello from " + serviceName;
+        final String greeting = new StringBuilder(new String(Character.toChars(iconCode)))
+            .append(" ")
+            .append("Hello from ")
+            .append(serviceName)
+            .toString();
+        return greeting;
     }
 
     @GetMapping("/{value}")
     public String getGreeting(@PathVariable("value") String value) {
-        return "Hello from " + serviceName + ", " + value;
+        final String greeting = new StringBuilder(new String(Character.toChars(iconCode)))
+            .append(" ")
+            .append("Hello from ")
+            .append(serviceName)
+            .append(", ")
+            .append(value)
+            .toString();
+        return greeting;
     }
 }

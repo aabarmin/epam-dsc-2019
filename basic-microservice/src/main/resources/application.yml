@@ -1,6 +1,7 @@
 basic:
   service:
     name: "Basic Service Implementation"
+    icon: 127791
 
 server:
   port: 8001

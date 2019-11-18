@@ -1,5 +1,6 @@
 package com.epam.dsc2019.cloud.hystrix.client;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,9 +15,15 @@ public interface GreetingServiceWithFallback {
 
     @Component
     public class GreetingServiceFallback implements GreetingServiceWithFallback {
+        @Value("${app.external.fallback.icon}")
+        private int iconCode;
+
         @Override
         public String getGreeting() {
-            return "Fallback message!";
+            return new StringBuilder(new String(Character.toChars(iconCode)))
+                .append(" ")
+                .append("Fallback message!")
+                .toString();
         }
     }
 }

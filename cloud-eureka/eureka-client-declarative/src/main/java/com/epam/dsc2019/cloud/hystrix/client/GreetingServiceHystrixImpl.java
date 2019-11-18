@@ -21,6 +21,8 @@ public class GreetingServiceHystrixImpl implements GreetingService {
 
     @Value("${app.external.service.name}")
     private String serviceName;
+    @Value("${app.external.fallback.icon}")
+    private int iconCode;
 
     @HystrixCommand(fallbackMethod = "getDefaultGreeting")
     @Override
@@ -35,6 +37,9 @@ public class GreetingServiceHystrixImpl implements GreetingService {
     }
 
     private String getDefaultGreeting() {
-        return "Fallback message!";
+        return new StringBuilder(new String(Character.toChars(iconCode)))
+            .append(" ")
+            .append("Fallback message!")
+            .toString();
     }
 }

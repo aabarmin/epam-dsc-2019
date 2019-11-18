@@ -6,3 +6,4 @@ server:
 app:
   service:
     name: Eureka Client Example (Secondary Profile)
+    icon: 128054

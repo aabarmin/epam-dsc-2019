@@ -6,3 +6,4 @@ server:
 app:
   service:
     name: Eureka Client Example (Default profile)
+    icon: 128049

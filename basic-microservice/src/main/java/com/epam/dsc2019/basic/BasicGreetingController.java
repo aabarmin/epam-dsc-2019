@@ -11,8 +11,16 @@ public class BasicGreetingController {
     @Value("${basic.service.name}")
     private String serviceName;
 
+    @Value("${basic.service.icon}")
+    private int iconCode;
+
     @GetMapping
     public String getGreeting() {
-        return "Hello from " + serviceName;
+        return new StringBuilder(new String(Character.toChars(iconCode)))
+            .append(" ")
+            .append("Hello from ")
+            .append(" ")
+            .append(serviceName)
+            .toString();
     }
 }
