@@ -1,0 +1,10 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="(9) Securty Client" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <module name="epam-dsc-2019.cloud-security.security-client-application.main" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="com.epam.dsc2019.cloud.security.client.CloudSecurityClientApplication" />
+    <option name="ALTERNATIVE_JRE_PATH" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

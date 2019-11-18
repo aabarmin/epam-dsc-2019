@@ -20,6 +20,10 @@ allprojects {
     ext['springCloudVersion'] = 'Greenwich.M3'
     group 'com.epam.dsc2019'
 
+    bootJar {
+        enabled = false
+    }
+
     repositories {
         mavenCentral()
         maven {
