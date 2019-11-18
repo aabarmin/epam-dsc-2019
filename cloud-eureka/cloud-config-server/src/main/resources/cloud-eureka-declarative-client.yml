@@ -2,3 +2,5 @@ app:
   external:
     service:
       name: cloud-eureka-client
+    errors:
+      count: 30

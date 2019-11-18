@@ -26,6 +26,12 @@ repositories {
     maven { url "https://repo.spring.io/milestone" }
 }
 
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
 dependencies {
     implementation('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client')
     implementation('org.springframework.cloud:spring-cloud-starter-netflix-hystrix')
@@ -36,6 +42,9 @@ dependencies {
     compileOnly('org.springframework.boot:spring-boot-configuration-processor')
 
     testImplementation('org.springframework.boot:spring-boot-starter-test')
+
+    compileOnly('org.projectlombok:lombok')
+    annotationProcessor('org.projectlombok:lombok')
 }
 
 dependencyManagement {

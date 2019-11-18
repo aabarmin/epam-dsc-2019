@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/greeting")
 public class BasicGreetingController {
-    @Value("${basic.service.name}") private String serviceName;
+    @Value("${basic.service.name}")
+    private String serviceName;
 
     @GetMapping
     public String getGreeting() {
