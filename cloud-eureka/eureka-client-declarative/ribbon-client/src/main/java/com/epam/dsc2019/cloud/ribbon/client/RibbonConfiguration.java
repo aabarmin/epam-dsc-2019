@@ -15,14 +15,15 @@ import org.springframework.web.client.RestTemplate;
     )
 })
 public class RibbonConfiguration {
-    @Bean
-    @LoadBalanced
-    public RestTemplate restTemplate() {
-        return new RestTemplate();
-    }
 
-    @Bean
-    public IRule eurekaClientSelectionRule() {
-        return new WeightedResponseTimeRule();
-    }
+  @Bean
+  @LoadBalanced
+  public RestTemplate restTemplate() {
+    return new RestTemplate();
+  }
+
+  @Bean
+  public IRule eurekaClientSelectionRule() {
+    return new WeightedResponseTimeRule();
+  }
 }

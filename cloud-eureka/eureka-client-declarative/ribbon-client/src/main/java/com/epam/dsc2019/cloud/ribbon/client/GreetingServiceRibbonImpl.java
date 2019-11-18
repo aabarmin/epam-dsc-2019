@@ -6,11 +6,12 @@ import org.springframework.web.client.RestTemplate;
 
 @Service
 public class GreetingServiceRibbonImpl implements GreetingService {
-    @Autowired
-    private RestTemplate restTemplate;
 
-    @Override
-    public String getGreeting() {
-        return restTemplate.getForObject("http://cloud-eureka-client/greeting", String.class);
-    }
+  @Autowired
+  private RestTemplate restTemplate;
+
+  @Override
+  public String getGreeting() {
+    return restTemplate.getForObject("http://cloud-eureka-client/greeting", String.class);
+  }
 }

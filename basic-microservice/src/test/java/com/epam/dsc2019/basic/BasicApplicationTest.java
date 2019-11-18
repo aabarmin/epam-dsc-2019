@@ -28,36 +28,38 @@ import org.springframework.web.context.WebApplicationContext;
 @WebAppConfiguration
 @ContextConfiguration(classes = BasicApplicationTest.TestConfiguration.class)
 public class BasicApplicationTest {
-    private MockMvc mockMvc;
 
-    @Autowired
-    private WebApplicationContext applicationContext;
+  private MockMvc mockMvc;
 
-    @Before
-    public void setUp() throws Exception {
-        mockMvc = MockMvcBuilders.webAppContextSetup(applicationContext)
-            .build();
+  @Autowired
+  private WebApplicationContext applicationContext;
+
+  @Before
+  public void setUp() throws Exception {
+    mockMvc = MockMvcBuilders.webAppContextSetup(applicationContext)
+        .build();
+  }
+
+  @Test
+  public void basicGreetingTest() throws Exception {
+    final MvcResult result = mockMvc.perform(get("/greeting"))
+        .andExpect(status().isOk())
+        .andExpect(content().contentTypeCompatibleWith(MediaType.TEXT_PLAIN))
+        .andReturn();
+
+    final String responseContent = result.getResponse().getContentAsString();
+
+    assertThat(responseContent, containsString("Hello from"));
+  }
+
+  @Configuration
+  @ComponentScan(basePackageClasses = BasicGreetingController.class)
+  @PropertySource("classpath:/test.properties")
+  static class TestConfiguration {
+
+    @Bean
+    public RestTemplate restTemplate() {
+      return new RestTemplate();
     }
-
-    @Test
-    public void basicGreetingTest() throws Exception {
-        final MvcResult result = mockMvc.perform(get("/greeting"))
-            .andExpect(status().isOk())
-            .andExpect(content().contentTypeCompatibleWith(MediaType.TEXT_PLAIN))
-            .andReturn();
-
-        final String responseContent = result.getResponse().getContentAsString();
-
-        assertThat(responseContent, containsString("Hello from"));
-    }
-
-    @Configuration
-    @ComponentScan(basePackageClasses = BasicGreetingController.class)
-    @PropertySource("classpath:/test.properties")
-    static class TestConfiguration {
-        @Bean
-        public RestTemplate restTemplate() {
-            return new RestTemplate();
-        }
-    }
+  }
 }

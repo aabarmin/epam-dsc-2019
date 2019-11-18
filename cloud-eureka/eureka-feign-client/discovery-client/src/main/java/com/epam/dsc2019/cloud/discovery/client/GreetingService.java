@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @FeignClient("cloud-eureka-client")
 public interface GreetingService {
-    @GetMapping("/greeting")
-    String getGreeting();
+
+  @GetMapping("/greeting")
+  String getGreeting();
 }

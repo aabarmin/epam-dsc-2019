@@ -13,32 +13,33 @@ import org.springframework.web.client.RestTemplate;
 @Service
 @Slf4j
 public class GreetingServiceHystrixImpl implements GreetingService {
-    @Autowired
-    private RestTemplate restTemplate;
-    @Autowired
-    private EurekaClient eurekaClient;
 
-    @Value("${app.external.service.name}")
-    private String serviceName;
-    @Value("${app.external.fallback.icon}")
-    private int iconCode;
+  @Autowired
+  private RestTemplate restTemplate;
+  @Autowired
+  private EurekaClient eurekaClient;
 
-    @HystrixCommand(fallbackMethod = "getDefaultGreeting")
-    @Override
-    public String getGreeting() {
-        final Application application = eurekaClient.getApplication(serviceName);
-        final InstanceInfo instance = application.getInstances().get(0);
-        final String url = "http://" + instance.getHostName() + ":" + instance.getPort() + "/greeting";
+  @Value("${app.external.service.name}")
+  private String serviceName;
+  @Value("${app.external.fallback.icon}")
+  private int iconCode;
 
-        log.info("Ask URL {} for greeting", url);
+  @HystrixCommand(fallbackMethod = "getDefaultGreeting")
+  @Override
+  public String getGreeting() {
+    final Application application = eurekaClient.getApplication(serviceName);
+    final InstanceInfo instance = application.getInstances().get(0);
+    final String url = "http://" + instance.getHostName() + ":" + instance.getPort() + "/greeting";
 
-        return restTemplate.getForObject(url, String.class);
-    }
+    log.info("Ask URL {} for greeting", url);
 
-    private String getDefaultGreeting() {
-        return new StringBuilder(new String(Character.toChars(iconCode)))
-            .append(" ")
-            .append("Fallback message!")
-            .toString();
-    }
+    return restTemplate.getForObject(url, String.class);
+  }
+
+  private String getDefaultGreeting() {
+    return new StringBuilder(new String(Character.toChars(iconCode)))
+        .append(" ")
+        .append("Fallback message!")
+        .toString();
+  }
 }

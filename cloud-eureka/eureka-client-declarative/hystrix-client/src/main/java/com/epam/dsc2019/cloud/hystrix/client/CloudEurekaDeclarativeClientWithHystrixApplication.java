@@ -14,20 +14,28 @@ import org.springframework.web.client.RestTemplate;
 @EnableCircuitBreaker
 @SuppressWarnings({"Duplicates", "InfiniteLoopStatement"})
 public class CloudEurekaDeclarativeClientWithHystrixApplication {
-    public static void main(String[] args) throws Exception {
-        final ConfigurableApplicationContext context = new SpringApplicationBuilder(CloudEurekaDeclarativeClientWithHystrixApplication.class)
-                .web(WebApplicationType.NONE)
-                .run(args);
-        final GreetingService greetingService = context.getBean(GreetingService.class);
 
-        do {
-            System.out.println(greetingService.getGreeting());
-            Thread.sleep(1000);
-        } while (true);
-    }
+  /**
+   * Start the declarative client with hystrix app.
+   *
+   * @param args app arguments
+   * @throws Exception in case of interruption
+   */
+  public static void main(String[] args) throws Exception {
+    final ConfigurableApplicationContext context = new SpringApplicationBuilder(
+        CloudEurekaDeclarativeClientWithHystrixApplication.class)
+        .web(WebApplicationType.NONE)
+        .run(args);
+    final GreetingService greetingService = context.getBean(GreetingService.class);
 
-    @Bean
-    public RestTemplate restTemplate() {
-        return new RestTemplate();
-    }
+    do {
+      System.out.println(greetingService.getGreeting());
+      Thread.sleep(1000);
+    } while (true);
+  }
+
+  @Bean
+  public RestTemplate restTemplate() {
+    return new RestTemplate();
+  }
 }

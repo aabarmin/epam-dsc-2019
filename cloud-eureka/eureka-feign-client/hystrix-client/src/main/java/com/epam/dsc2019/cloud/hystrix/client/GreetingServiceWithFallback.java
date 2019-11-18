@@ -6,24 +6,26 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @FeignClient(
-        name = "cloud-eureka-client",
-        fallback = GreetingServiceWithFallback.GreetingServiceFallback.class
+    name = "cloud-eureka-client",
+    fallback = GreetingServiceWithFallback.GreetingServiceFallback.class
 )
 public interface GreetingServiceWithFallback {
-    @GetMapping("/greeting")
-    String getGreeting();
 
-    @Component
-    public class GreetingServiceFallback implements GreetingServiceWithFallback {
-        @Value("${app.external.fallback.icon}")
-        private int iconCode;
+  @GetMapping("/greeting")
+  String getGreeting();
 
-        @Override
-        public String getGreeting() {
-            return new StringBuilder(new String(Character.toChars(iconCode)))
-                .append(" ")
-                .append("Fallback message!")
-                .toString();
-        }
+  @Component
+  public class GreetingServiceFallback implements GreetingServiceWithFallback {
+
+    @Value("${app.external.fallback.icon}")
+    private int iconCode;
+
+    @Override
+    public String getGreeting() {
+      return new StringBuilder(new String(Character.toChars(iconCode)))
+          .append(" ")
+          .append("Fallback message!")
+          .toString();
     }
+  }
 }

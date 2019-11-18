@@ -8,19 +8,25 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/greeting")
 public class BasicGreetingController {
-    @Value("${basic.service.name}")
-    private String serviceName;
 
-    @Value("${basic.service.icon}")
-    private int iconCode;
+  @Value("${basic.service.name}")
+  private String serviceName;
 
-    @GetMapping
-    public String getGreeting() {
-        return new StringBuilder(new String(Character.toChars(iconCode)))
-            .append(" ")
-            .append("Hello from ")
-            .append(" ")
-            .append(serviceName)
-            .toString();
-    }
+  @Value("${basic.service.icon}")
+  private int iconCode;
+
+  /**
+   * Returns the greeting message with icon.
+   *
+   * @return message string
+   */
+  @GetMapping
+  public String getGreeting() {
+    return new StringBuilder(new String(Character.toChars(iconCode)))
+        .append(" ")
+        .append("Hello from ")
+        .append(" ")
+        .append(serviceName)
+        .toString();
+  }
 }

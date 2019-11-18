@@ -8,10 +8,17 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/greeting")
 public class BasicGreetingController {
-    @Value("${app.service.name}") private String serviceName;
 
-    @GetMapping
-    public String getGreeting() {
-        return "Hello from " + serviceName;
-    }
+  @Value("${app.service.name}")
+  private String serviceName;
+
+  /**
+   * Returns a greeting message.
+   *
+   * @return greeting message
+   */
+  @GetMapping
+  public String getGreeting() {
+    return "Hello from " + serviceName;
+  }
 }

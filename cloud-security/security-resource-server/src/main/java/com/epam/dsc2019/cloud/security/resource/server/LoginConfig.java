@@ -11,25 +11,26 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @Configuration
 @Order(1)
 public class LoginConfig extends WebSecurityConfigurerAdapter {
-    @Autowired
-    private PasswordEncoder passwordEncoder;
 
-    @Override
-    protected void configure(HttpSecurity http) throws Exception {
-        http.requestMatchers()
-                .antMatchers("/login", "/oauth/authorize")
-                .and()
-                .authorizeRequests()
-                .anyRequest().authenticated()
-                .and()
-                .formLogin().permitAll();
-    }
+  @Autowired
+  private PasswordEncoder passwordEncoder;
 
-    @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.inMemoryAuthentication()
-                .withUser("admin")
-                .password(passwordEncoder.encode("admin"))
-                .roles("USER");
-    }
+  @Override
+  protected void configure(HttpSecurity http) throws Exception {
+    http.requestMatchers()
+        .antMatchers("/login", "/oauth/authorize")
+        .and()
+        .authorizeRequests()
+        .anyRequest().authenticated()
+        .and()
+        .formLogin().permitAll();
+  }
+
+  @Override
+  protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+    auth.inMemoryAuthentication()
+        .withUser("admin")
+        .password(passwordEncoder.encode("admin"))
+        .roles("USER");
+  }
 }

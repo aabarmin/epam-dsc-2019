@@ -11,23 +11,24 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Aut
 @Configuration
 @EnableAuthorizationServer
 public class AuthServerConfig extends AuthorizationServerConfigurerAdapter {
-    @Autowired
-    private PasswordEncoder passwordEncoder;
 
-    @Override
-    public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-        clients.inMemory()
-                .withClient("some-client-details")
-                .secret(passwordEncoder.encode("some-client-secret"))
-                .authorizedGrantTypes("authorization_code")
-                .scopes("user_info")
-                .autoApprove(true)
-                .redirectUris("http://localhost:8080/login");
-    }
+  @Autowired
+  private PasswordEncoder passwordEncoder;
 
-    @Override
-    public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
-        security.tokenKeyAccess("permitAll()")
-                .checkTokenAccess("isAuthenticated()");
-    }
+  @Override
+  public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
+    clients.inMemory()
+        .withClient("some-client-details")
+        .secret(passwordEncoder.encode("some-client-secret"))
+        .authorizedGrantTypes("authorization_code")
+        .scopes("user_info")
+        .autoApprove(true)
+        .redirectUris("http://localhost:8080/login");
+  }
+
+  @Override
+  public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
+    security.tokenKeyAccess("permitAll()")
+        .checkTokenAccess("isAuthenticated()");
+  }
 }

@@ -5,7 +5,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class CloudSecurityClientApplication {
-    public static void main(String[] args) throws Exception {
-        SpringApplication.run(CloudSecurityClientApplication.class);
-    }
+
+  /**
+   * Start the security client application.
+   * @param args program arguments
+   */
+  public static void main(String[] args) {
+    SpringApplication.run(CloudSecurityClientApplication.class);
+  }
 }

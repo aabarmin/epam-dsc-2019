@@ -6,13 +6,14 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class HtmlPageController {
-    @GetMapping("/")
-    public ModelAndView indexPage() {
-        return new ModelAndView("index");
-    }
 
-    @GetMapping("/securedPage")
-    public ModelAndView secretPage() {
-        return new ModelAndView("secured-page");
-    }
+  @GetMapping("/")
+  public ModelAndView indexPage() {
+    return new ModelAndView("index");
+  }
+
+  @GetMapping("/securedPage")
+  public ModelAndView secretPage() {
+    return new ModelAndView("secured-page");
+  }
 }

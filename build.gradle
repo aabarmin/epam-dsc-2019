@@ -15,6 +15,7 @@ allprojects {
     apply plugin: 'idea'
     apply plugin: 'org.springframework.boot'
     apply plugin: 'io.spring.dependency-management'
+    apply plugin: 'checkstyle'
 
     sourceCompatibility = 1.8
     ext['springCloudVersion'] = 'Greenwich.M3'
@@ -22,6 +23,12 @@ allprojects {
 
     bootJar {
         enabled = false
+    }
+
+    checkstyle {
+        toolVersion = "8.26"
+        maxErrors = 0
+        maxWarnings = 0
     }
 
     repositories {
