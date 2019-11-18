@@ -15,7 +15,3 @@ jobs:
           java-version: 1.8
       - name: Build with Gradle
         run: ./gradlew build
-      - name: Check the codestyle
-        run: ./gradlew checkstyleMain
-      - name: Check the codestyle of tests
-        run: ./gradlew checkstyleTest
