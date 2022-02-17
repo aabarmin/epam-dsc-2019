@@ -3,6 +3,7 @@ apply plugin: 'java'
 dependencies {
     implementation('org.springframework.cloud:spring-cloud-starter-oauth2')
     implementation('org.springframework.boot:spring-boot-starter-thymeleaf')
+    implementation("com.google.guava:guava:31.0.1-jre")
 }
 
 bootJar {

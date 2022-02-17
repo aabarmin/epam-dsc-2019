@@ -8,5 +8,18 @@
     <h1>
         This is the Page of Secrets
     </h1>
+
+    <p>
+        <b>Name:</b>
+        <span th:text="name" />
+    </p>
+
+    <p>
+        <b>Authorities:</b>
+        <ul>
+            <li th:each="authority : ${authorities}"
+                th:text="${authority}" />
+        </ul>
+    </p>
 </body>
 </html>

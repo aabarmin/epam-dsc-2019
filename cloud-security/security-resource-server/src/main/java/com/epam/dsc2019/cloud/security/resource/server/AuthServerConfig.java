@@ -22,7 +22,7 @@ public class AuthServerConfig extends AuthorizationServerConfigurerAdapter {
         .secret(passwordEncoder.encode("some-client-secret"))
         .authorizedGrantTypes("authorization_code")
         .scopes("user_info")
-        .autoApprove(true)
+        .autoApprove(false)
         .redirectUris("http://localhost:8080/login");
   }
 
